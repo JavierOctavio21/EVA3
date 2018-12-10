@@ -1,0 +1,16 @@
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        miStackOverFlow();
+    }
+    public static void miStackOverFlow() {
+        System.out.println("Hola Usuario, bonito día!");
+        miStackOverFlow();
+    }
+}
