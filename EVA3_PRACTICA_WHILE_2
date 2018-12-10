@@ -1,0 +1,42 @@
+import java.util.Scanner;
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        System.out.println("Crea un Nombre de Usuario:");
+        String sUsuario;
+        sUsuario = input.nextLine();
+        System.out.println("Crea una Contraseña:");
+        String sContrasena;
+        sContrasena = input.nextLine();
+        System.out.println("Introdusca el Nombre de Usuario:");
+        String sUsuario2;
+        sUsuario2 = input.nextLine();
+        System.out.println("Introdusca la Contraseña:");
+        String sContrasena2;
+        sContrasena2 = input.nextLine();
+        while (!sUsuario.equals(sUsuario2) || !sContrasena.equals(sContrasena2)) {
+            for (int i = 3; i >= 1; i--) {
+                System.out.println("El Nombre de Usuario o la Contraseña esta Incorrecto");
+                System.out.println("Ingrese Nuevamente");
+                System.out.println("Quedan " + i + " Oportunidades");
+                System.out.println("Introdusca el Nombre de Usuario:");
+                sUsuario2 = input.nextLine();
+                System.out.println("Introdusca la Contraseña:");
+                sContrasena2 = input.nextLine();
+                if (sUsuario.equals(sUsuario2) && sContrasena.equals(sContrasena2)) {
+                }
+                if (i == 1) {
+                    System.out.println("Acceso Denegado");
+                }
+            }
+        }
+        System.out.println("Bienvenido");
+    }
+}
