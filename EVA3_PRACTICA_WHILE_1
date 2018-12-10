@@ -1,0 +1,69 @@
+import java.util.*;
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        int iSuma = 0, iSumaCPU = 0;
+        for (int i = 1; i <= 2; i++) {
+            int iNum = (int)(Math.random() * 13) + 1;
+            iSuma = iSuma + iNum;
+            System.out.println("Carta "+i+": "+iNum);
+            int iNum2 = (int)(Math.random() * 13) + 1;
+            iSumaCPU = iSumaCPU + iNum2;
+        }
+        System.out.println("Total: "+iSuma);
+        while (iSuma <= 21 || iSumaCPU <= 21) {
+            System.out.println("¿Quieres una carta?");
+            boolean bResp;
+            bResp = input.nextBoolean();
+            if (bResp == true) {
+                int iNum = (int)(Math.random() * 13) + 1;
+                System.out.println(iNum);
+                iSuma = iSuma + iNum;
+                System.out.println("Total: "+iSuma);
+                if (iSumaCPU < 18) {
+                    int iNum2 = (int)(Math.random() * 13) + 1;
+                    iSumaCPU = iSumaCPU + iNum2;
+                }
+            } else {
+                if (bResp == false) {
+                    if (iSumaCPU < 18) {
+                        int iNum2 = (int)(Math.random() * 13) + 1;
+                        iSumaCPU = iSumaCPU + iNum2;
+                    }
+                }
+            }
+            if (bResp == false && iSumaCPU >= 18) {
+                break;
+            }
+        }
+        System.out.println("Total CPU: "+iSumaCPU);
+        if (iSuma > 21 && iSumaCPU > 21) {
+            System.out.println("Ambos Perdieron");
+        } else {
+            if (iSuma > 21) {
+                System.out.println("La CPU Ganó");
+            } else {
+                if (iSumaCPU > 21) {
+                    System.out.println("El Usuario Ganó");
+                } else {
+                    if (iSuma > iSumaCPU) {
+                        System.out.println("El Usuario Ganó");
+                    } else {
+                        if (iSuma < iSumaCPU) {
+                            System.out.println("La CPU Ganó");
+                        } else {
+                            System.out.println("Empate");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
