@@ -1,0 +1,29 @@
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+            System.out.println("Inicia main");
+            X();
+            System.out.println("Termina main");
+        }
+        public static void X(){
+            System.out.println("Inicia X");
+            Y();
+            System.out.println("Termina X");
+        }
+        public static void Y(){
+            System.out.println("Inicia Y");
+            Z();
+            System.out.println("Termina Y");
+        }
+        public static void Z(){
+            System.out.println("Inicia Z");
+            System.out.println("Termina Z");
+        }
+    }
