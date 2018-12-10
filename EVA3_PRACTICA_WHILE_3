@@ -1,0 +1,26 @@
+import java.util.Scanner;
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        int iNum, iCont = 2;
+        boolean bPrimo = true;
+        System.out.println("Ingrese un Número: ");
+        iNum = input.nextInt();
+        while (bPrimo && iCont < iNum){
+            if (iNum % iCont == 0)
+                bPrimo = false;
+            else iCont++;
+        }
+        if (bPrimo)
+            System.out.println("El Número es Primo");
+        else
+            System.out.println("El Número No es Primo");
+    }
+}
