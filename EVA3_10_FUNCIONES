@@ -1,0 +1,151 @@
+import java.util.*;
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        System.out.println("Numero del mes del año");
+        int iMes = input.nextInt();
+        Meses(iMes);
+        System.out.println("¿Cual es tu calificacion?");
+        String sCalifa = input.next();
+        CalifaLetra(sCalifa);
+        System.out.println("¿Cual es tu segunda calificacion?");
+        int iCalifa = input.nextInt();
+        CalifaNum(iCalifa);
+        System.out.println("Ingrese un Entero");
+        System.out.println("Tu Entero fue: " + Overload(input.nextInt()));
+        System.out.println("Ingrese un número real");
+        System.out.println("Tu Número real fue: " + Overload(input.nextDouble()));
+        System.out.println("Ingrese una Palabra");
+        System.out.println("Tu palabra fue: " + Overload(input.next()));
+        System.out.println("Ingrese un Booleano");
+        System.out.println("Tu booleano fue: " + Overload(input.nextBoolean()));
+        System.out.println("Ingrese un Número: ");
+        int iNum = input.nextInt();
+        NumeroPrimo(iNum);
+        System.out.println("Menciona un Año");
+        int iAnnio = input.nextInt();
+        AnnioBisiesto(iAnnio);
+    }
+    public static int Meses (int iMes) {
+        switch(iMes){
+            case 1:
+                System.out.println("ENERO");
+                break;
+            case 2:
+                System.out.println("FEBRERO");
+                break;
+            case 3:
+                System.out.println("MARZO");
+                break;
+            case 4:
+                System.out.println("ABRIL");
+                break;
+            case 5:
+                System.out.println("MAYO");
+                break;
+            case 6:
+                System.out.println("JUNIO");
+                break;
+            case 7:
+                System.out.println("JULIO");
+                break;
+            case 8:
+                System.out.println("AGOSTO");
+                break;
+            case 9:
+                System.out.println("SEPTIEMBRE");
+                break;
+            case 10:
+                System.out.println("OCTUBRE");
+                break;
+            case 11:
+                System.out.println("NOVIEMBRE");
+                break;
+            case 12:
+                System.out.println("DICIEMBRE");
+                break;
+            default:
+                System.out.println("El Mes No Existe");
+            }
+        return iMes;
+    }
+    public static String CalifaLetra (String sCalifa) {
+       switch (sCalifa) {
+            case "A":
+               System.out.println("Sacaste 100");
+               break;
+            case "B":
+               System.out.println("Sacaste 90");
+               break;
+            case "C":
+               System.out.println("Sacaste 80");
+               break;
+            case "D":
+               System.out.println("Sacaste 70");
+               break;
+            default:
+                System.out.println("La Calificacion esta fuera de rango");
+       }
+       return sCalifa;
+    }
+    public static int CalifaNum (int iCalifa) {
+        switch (iCalifa) {
+            case 100:
+                System.out.println("Sacaste A");
+                break;
+            case 90:
+                System.out.println("Sacaste B");
+                break;
+            case 80:
+                System.out.println("Sacaste C");
+                break;
+            case 70:
+                System.out.println("Sacaste D");
+                break;
+            default:
+                System.out.println("La Calificacion esta fuera de rango");
+        }
+        return iCalifa;
+    }
+    public static int Overload (int iEnter) {
+        return iEnter;
+    }
+    public static double Overload (double dReal) {
+        return dReal;
+    }
+    public static String Overload (String sPalabra) {
+        return sPalabra;
+    }
+    public static boolean Overload (boolean bBooleano) {
+        return bBooleano;
+    }
+    public static int NumeroPrimo (int iNum) {
+        int iCont = 0;
+        for (int i = 1; i <= iNum; i++) {
+            if((iNum % i) == 0) {
+                iCont++;
+            }
+        }
+        if(iCont <= 2)
+            System.out.println("El Número es Primo");
+        else
+            System.out.println("El Número No es Primo");
+        return iNum;
+    }
+    public static int AnnioBisiesto (int iAnnio) {
+        int iBisiesto = iAnnio % 4;
+        int iBisiesto2 = iAnnio % 100;
+        int iBisiesto3 = iAnnio % 400;
+        if (iBisiesto == 0 && (!(iBisiesto2 == 0) || iBisiesto3 == 0))
+            System.out.println("Es Año Bisiesto");
+        else System.out.println("No Es Año Bisiesto");
+        return iAnnio;
+    }
+}
