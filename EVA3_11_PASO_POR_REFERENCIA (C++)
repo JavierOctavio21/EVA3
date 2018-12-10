@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+double pasoReferencia(double rValor) {
+    double rResult;
+    int iPotencia;
+    cout << "Ingrese la Potencia" << endl;
+    cin >> iPotencia;
+    rResult = 1;
+    for (int i = 1; i <= iPotencia; i++) {
+        rResult *= rValor;
+    }
+    cout << "El Resultado es: " << rResult << endl;
+    return rResult;
+}
+int main() {
+    double rValor;
+    cout << "Ingrese un Valor" << endl;
+    cin >> rValor;
+    pasoReferencia(rValor);
+    return 0;
+}
