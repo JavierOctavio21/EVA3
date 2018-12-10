@@ -1,0 +1,24 @@
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Para Usar la Funcion --> Llamada a Funcion
+        Main mObjeto = new Main();
+        mObjeto.ImprimeMensaje("Javier");
+        Math.random();
+    }
+    //PARADIGMAS DE PROGRAMACION:
+    // PROGRAMACION ESTRUCTURADA
+    // PROGRAMACION MODULAR, ORIENTADA A OBJETOS, ORIENTADA A EVENTOS, LOGICA, FUNCIONAL
+    //OOP
+    //publico privado protegido default
+    //nivel de acceso valor de retorno nombre de la funcion (argumentos) {cuerpo de la funcion}
+    void ImprimeMensaje(String Mensaje){
+        System.out.println("Hola " + Mensaje);
+    }
+}
