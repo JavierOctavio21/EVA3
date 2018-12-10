@@ -1,0 +1,23 @@
+import java.util.Scanner;
+/**
+ * @author Javier Octavio
+ */
+public class Main {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner (System.in);
+        System.out.println("Ingrese un Valor a Calcular");
+        int iValor = input.nextInt();
+        //int iResult = Factorial(iValor);
+        System.out.println("Resultado = " + Factorial(iValor));
+    }
+        public static int Factorial(int iValor){
+            int iResult = 1;
+            for (int i = iValor; i >= 1; i--)
+                iResult *= i; //iResult = iResult * i
+            return iResult;
+        }
+    }
